@@ -2,8 +2,11 @@
 
 # File: ProtonVPN-Startup
 #
-# Usage by adding a new startup application
-# browse to the file location.
+# Requires: wmctrl to be installed.
+#
+# Use: sudo apt install wmctrl
+#
+# Usage: Add a new startup application browse to the file location.
 #
 # This file needs to be given execute permissions.
 #
