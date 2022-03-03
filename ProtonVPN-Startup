@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Start the GUI
+protonvpn  > /dev/null 2>&1
+
+# Close the GUI (minimises to system tray)
+wmctrl -F -c 'ProtonVPN' > /dev/null 2>&1
+
+#Connect my CountryCode servers
+protonvpn-cli c --cc UK > /dev/null 2>&1
+
+# Turn off the kill switch
+# Sometimes it stays on, computer crash or other case
+protonvpn-cli ks --off > /dev/null 2>&1
+
+exit 0
