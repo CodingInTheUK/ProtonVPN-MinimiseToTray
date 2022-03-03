@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# File: ProtonVPN-Startup
+#
+# Usage by adding a new startup application
+# browse to the file location.
+#
+# This file needs to be given execute permissions.
+#
+# Use: chmod +x /path/to/ProtonVPN-Startup
+
 # Start the GUI
 protonvpn  > /dev/null 2>&1
 
@@ -9,11 +18,15 @@ sleep 10
 # Close the GUI (minimises to system tray)
 wmctrl -F -c 'ProtonVPN' > /dev/null 2>&1
 
-#Connect my CountryCode servers
-protonvpn-cli c --cc UK > /dev/null 2>&1
-
 # Turn off the kill switch
 # Sometimes it stays on, computer crash or other case
 protonvpn-cli ks --off > /dev/null 2>&1
 
+give the previous command time to run.
+sleep 2
+
+# Connect my to CountryCode servers
+protonvpn-cli c --cc UK > /dev/null 2>&1
+
+# exit the script, no need to keep it running.
 exit 0
