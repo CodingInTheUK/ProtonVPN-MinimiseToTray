@@ -3,6 +3,9 @@
 # Start the GUI
 protonvpn  > /dev/null 2>&1
 
+# Give ProtonVPN time to load up.
+sleep 10
+
 # Close the GUI (minimises to system tray)
 wmctrl -F -c 'ProtonVPN' > /dev/null 2>&1
 
